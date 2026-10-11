@@ -2,6 +2,8 @@ import React from "react";
 import'./estilos.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Servicio from "./components/Servicios";
 
 function App() {
 
@@ -12,79 +14,14 @@ function App() {
       
       <Header />
       
+      {/* HERO SECTION */}
       <main>
-        {/* HERO SECTION */}
-        <section id="inicio" className="hero-section text-white text-center d-flex align-items-center py-5">
-          <div className="container py-4">
-            <span className="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill fw-bold text-uppercase tracking-wider">
-              Desde 2009 al cuidado de tus mascotas en Rancagua
-            </span>
-            <h1 className="display-4 fw-bold mb-3">El cuidado y bienestar que tu mascota merece</h1>
-            <p className="lead mb-4 mx-auto text-light hero-desc">
-              Atención clínica especializada para perros, gatos, conejos y aves. Contamos con tecnología moderna, médicos dedicados y seguimiento personalizado.
-            </p>
-            <div className="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="#agenda" className="btn btn-warning btn-lg fw-bold text-dark px-4 shadow">Solicitar Consulta</a>
-              <a href="#productos" className="btn btn-outline-light btn-lg px-4">Ir a la Tienda</a>
-            </div>
-          </div>
-        </section>
+        <Hero />
+        
+      {/* SERVICIOS Y PROCEDIMIENTOS */}
 
-        {/* SERVICIOS Y PROCEDIMIENTOS */}
-        <section id="servicios" className="py-5 bg-light">
-          <div className="container py-3">
-            <div className="text-center mb-5">
-              <h2 className="fw-bold text-primary-custom">Procedimientos y Servicios</h2>
-              <p className="text-muted">Servicios clínicos integrales diseñados para la salud preventiva y curativa de tu compañero.</p>
-            </div>
-            <div className="row g-4">
-              <div className="col-12 col-md-6 col-lg-3">
-                <article className="card h-100 service-card border-0 shadow-sm text-center p-3">
-                  <div className="card-icon mx-auto my-3 text-primary-custom">
-                    <i className="bi bi-bandaid fs-1"></i>
-                  </div>
-                  <div className="card-body">
-                    <h3 className="h5 card-title fw-bold">Consulta General</h3>
-                    <p className="card-text text-muted">Evaluación física exhaustiva, diagnóstico oportuno y planes terapéuticos personalizados.</p>
-                  </div>
-                </article>
-              </div>
-              <div className="col-12 col-md-6 col-lg-3">
-                <article className="card h-100 service-card border-0 shadow-sm text-center p-3">
-                  <div className="card-icon mx-auto my-3 text-primary-custom">
-                    <i className="bi bi-shield-plus fs-1"></i>
-                  </div>
-                  <div className="card-body">
-                    <h3 className="h5 card-title fw-bold">Vacunación y Desparasitación</h3>
-                    <p className="card-text text-muted">Calendarios de inmunización canina y felina con registro digital y control de fechas.</p>
-                  </div>
-                </article>
-              </div>
-              <div className="col-12 col-md-6 col-lg-3">
-                <article className="card h-100 service-card border-0 shadow-sm text-center p-3">
-                  <div className="card-icon mx-auto my-3 text-primary-custom">
-                    <i className="bi bi-scissors fs-1"></i>
-                  </div>
-                  <div className="card-body">
-                    <h3 className="h5 card-title fw-bold">Cirugía Menor</h3>
-                    <p className="card-text text-muted">Pabellón quirúrgico equipado, esterilizaciones y procedimientos de tejidos blandos seguros.</p>
-                  </div>
-                </article>
-              </div>
-              <div className="col-12 col-md-6 col-lg-3">
-                <article className="card h-100 service-card border-0 shadow-sm text-center p-3">
-                  <div className="card-icon mx-auto my-3 text-primary-custom">
-                    <i className="bi bi-speedometer2 fs-1"></i>
-                  </div>
-                  <div className="card-body">
-                    <h3 className="h5 card-title fw-bold">Control de Peso y Nutrición</h3>
-                    <p className="card-text text-muted">Monitoreo del peso y asesoramiento dietético adaptado a la edad y requerimientos biológicos.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
+      <Servicio/>
+        
 
         {/* EQUIPO MÉDICO */}
         <section id="equipo" className="py-5">
