@@ -15,10 +15,10 @@ function Footer() {
           <div className="col-12 col-md-4">
             <h5 className="fw-bold mb-3">Navegación Rápida</h5>
             <ul className="list-unstyled small d-flex flex-column gap-2">
-              <li><a href="#productos" className="text-secondary text-decoration-none hover-link">Farmacia y Accesorios</a></li>
-              <li><a href="#login" className="text-secondary text-decoration-none hover-link">Portal de Clientes (Login)</a></li>
-              <li><Link to="#registro" className="text-secondary text-decoration-none hover-link">Crear una Cuenta</Link></li>
-              <li><a href="#agenda" className="text-secondary text-decoration-none hover-link">Solicitud de Horas</a></li>
+              <li><Link to="/productos" className="text-secondary text-decoration-none hover-link">Farmacia y Accesorios</Link></li>
+  <li><Link to="/login" className="text-secondary text-decoration-none hover-link">Portal de Clientes (Login)</Link></li>
+  <li><Link to="/registro" className="text-secondary text-decoration-none hover-link">Crear una Cuenta</Link></li>
+  <li><a href="/#agenda" className="text-secondary text-decoration-none hover-link">Solicitud de Horas</a></li>
             </ul>
           </div>
           <div className="col-12 col-md-4">
