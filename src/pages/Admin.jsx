@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  obtenerProductos, 
-  agregarProducto, 
-  actualizarProducto, 
-  eliminarProducto 
+import {
+  obtenerProductos,
+  agregarProducto,
+  actualizarProducto,
+  eliminarProducto
 } from '../data/productos';
 
 function Admin() {
@@ -55,7 +55,6 @@ function Admin() {
 
     if (vNombre && vCategoria && vPrecio) {
       if (idEditando === null) {
-        // MODO AGREGAR: Calcular siguiente código ME00X
         let mayorNumero = 0;
         productos.forEach((p) => {
           const num = Number(p.id.slice(2));
@@ -130,10 +129,10 @@ function Admin() {
             <div className="row g-3">
               <div className="col-12 col-md-4">
                 <label htmlFor="prod-name" className="form-label fw-semibold">Nombre del Producto *</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   className={`form-control ${errores.nombre ? 'is-invalid' : ''}`}
-                  id="prod-name" 
+                  id="prod-name"
                   placeholder="Ej: Amoxibay 250mg"
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
@@ -143,10 +142,10 @@ function Admin() {
 
               <div className="col-12 col-md-4">
                 <label htmlFor="prod-categoria" className="form-label fw-semibold">Categoría *</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   className={`form-control ${errores.categoria ? 'is-invalid' : ''}`}
-                  id="prod-categoria" 
+                  id="prod-categoria"
                   placeholder="Ej: Antibióticos"
                   value={categoria}
                   onChange={(e) => setCategoria(e.target.value)}
@@ -156,10 +155,10 @@ function Admin() {
 
               <div className="col-12 col-md-4">
                 <label htmlFor="prod-precio" className="form-label fw-semibold">Precio (CLP) *</label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   className={`form-control ${errores.precio ? 'is-invalid' : ''}`}
-                  id="prod-precio" 
+                  id="prod-precio"
                   placeholder="Ingrese Precio"
                   value={precio}
                   onChange={(e) => setPrecio(e.target.value)}
@@ -169,12 +168,12 @@ function Admin() {
 
               <div className="col-12 mt-4 d-flex gap-2">
                 <button type="submit" className="btn btn-warning fw-bold text-dark px-4">
-                  <i className="bi bi-plus-circle me-1"></i> 
+                  <i className="bi bi-plus-circle me-1"></i>
                   {idEditando ? 'Guardar Cambios' : 'Agregar Producto'}
                 </button>
                 {idEditando && (
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="btn btn-secondary"
                     onClick={() => {
                       setIdEditando(null);
@@ -215,14 +214,14 @@ function Admin() {
                     <td>{prod.categoria}</td>
                     <td>${prod.precio.toLocaleString('es-CL')}</td>
                     <td className="text-center">
-                      <button 
-                        className="btn btn-sm btn-outline-warning me-2" 
+                      <button
+                        className="btn btn-sm btn-outline-warning me-2"
                         onClick={() => cargarParaEditar(prod)}
                       >
                         <i className="bi bi-pencil"></i>
                       </button>
-                      <button 
-                        className="btn btn-sm btn-outline-danger" 
+                      <button
+                        className="btn btn-sm btn-outline-danger"
                         onClick={() => manejarEliminar(prod)}
                       >
                         <i className="bi bi-trash"></i>

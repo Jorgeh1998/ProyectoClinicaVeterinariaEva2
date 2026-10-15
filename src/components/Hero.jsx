@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
 
@@ -14,7 +15,7 @@ function Hero() {
             </p>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
               <a href="#agenda" className="btn btn-warning btn-lg fw-bold text-dark px-4 shadow">Solicitar Consulta</a>
-              <a href="#productos" className="btn btn-outline-light btn-lg px-4">Ir a la Tienda</a>
+              <Link to="#productos" className="btn btn-outline-light btn-lg px-4">Ir a la Tienda</Link>
             </div>
           </div>
         </section>
