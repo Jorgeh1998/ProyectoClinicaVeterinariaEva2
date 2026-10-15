@@ -1,61 +1,79 @@
-import React from "react";
-import'./estilos.css';
+import React, {useState, useEffect} from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './estilos.css';
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Servicio from "./components/Servicios";
-import Equipo from "./components/Equipo";
-import Agenda from "./components/Agenda";
-import Video from "./components/Video";
-import Ubicacion from "./components/Ubicacion";
 import Carrito from "./components/Carrito";
+
+// Paginas
+import Home from "./pages/Home";
+import Tienda from "./pages/Tienda";
 
 function App() {
 
+  const [carrito, setCarrito] = useState(() => {
+    const guardado = localStorage.getItem("carritoVeterinaria");
+    return guardado ? JSON.parse(guardado) : [];
+  });
+
+  // Cada vez que el carrito cambie, se guarda automaticamente en localStorage
+  useEffect(() => {
+    localStorage.setItem("carritoVeterinaria", JSON.stringify(carrito));
+  }, [carrito]);
+
+  // funcion para agregar productos
+  const agregarAlCarrito = (producto) => {
+    setCarrito((carritoActual) => {
+      const existe = carritoActual.find((item) => item.id === producto.id);
+      if (existe) {
+        // Si ya está en el carrito, le sumamos 1 a la cantidad
+        return carritoActual.map((item) =>
+          item.id === producto.id ? { ...item, cantidad: item.cantidad + 1 } : item
+        );
+      } else {
+        // Si es nuevo, lo agregamos con cantidad 1
+        return [...carritoActual, { ...producto, cantidad: 1 }];
+      }
+    });
+  };
+
+  // funcion para quitar un producto
+  const quitarDelCarrito = (id) => {
+    setCarrito((carritoActual) => carritoActual.filter((item) => item.id !== id));
+  };
+
+  // funcion para vacio o "pagar" el carrito
+  const vaciarCarrito = () => {
+    setCarrito([]);
+  };
+
+  // Calculamos el total de artículos para mostrarlo en el botón del Header
+  const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+  //===================================================================//
+  
   return (
-    <>
-
-      {/*Usaremos el componenete Header */}
+    <BrowserRouter>
+      {/* Le pasamos totalItems como PROP al Header */}
+      <Header contadorCarrito={totalItems} />
       
-        <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Le pasamos la función agregarAlCarrito como PROP a la Tienda */}
+        <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
+      </Routes>
+
+      <Footer />
       
-      {/* HERO SECTION */}
-      <main>
-        <Hero />
-        
-      {/* SERVICIOS Y PROCEDIMIENTOS */}
-
-        <Servicio/>
-        
-
-        {/* EQUIPO MÉDICO */}
-
-        <Equipo/>
-        
-
-        {/* FORMULARIO DE AGENDAMIENTO */}
-
-        <Agenda/>
-        
-
-        {/* VIDEO EDUCATIVO EMBEBIDO */}
-        
-        <Video/>
-
-      {/* UBICACIÓN Y MAPA INTERACTIVO */}
-      </main>
-        <Ubicacion/>
-
-      {/* FOOTER INFORMATIVO */}
-      
-        <Footer />
-
-      {/* MENÚ LATERAL (OFFCANVAS) PARA EL CARRITO */}
-      
-        <Carrito/>
-
-    </>
+      {/* Le pasamos los datos y funciones como PROPS al Carrito lateral */}
+      <Carrito
+        carrito={carrito}
+        quitarDelCarrito={quitarDelCarrito}
+        vaciarCarrito={vaciarCarrito}
+      />
+    </BrowserRouter>
   );
 }
 
-export default App
+export default App;
