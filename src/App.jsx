@@ -69,9 +69,9 @@ function App() {
         <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
         <Route path="/categorias" element={<Categorias agregarAlCarrito={agregarAlCarrito} />} />
         <Route path="/ofertas" element={<Ofertas agregarAlCarrito={agregarAlCarrito} />} />
-        <Route path="/checkout" element={<Checkout agregarAlCarrito={agregarAlCarrito} vaciarCarrito={vaciarCarrito} />} />
+        <Route path="/checkout" element={<Checkout carrito={carrito} vaciarCarrito={vaciarCarrito} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Registro" element={<Registro />} />
+        <Route path="/registro" element={<Registro />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
 
