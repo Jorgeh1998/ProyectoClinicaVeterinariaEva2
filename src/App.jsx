@@ -12,6 +12,9 @@ import Tienda from "./pages/Tienda";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Registro from "./pages/Registro";
+import Categorias from "./pages/Categorias";
+import Ofertas from "./pages/Ofertas";
+import Checkout from "./pages/Checkout";
 
 function App() {
 
@@ -64,6 +67,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
+        <Route path="/categorias" element={<Categorias agregarAlCarrito={agregarAlCarrito} />} />
+        <Route path="/ofertas" element={<Ofertas agregarAlCarrito={agregarAlCarrito} />} />
+        <Route path="/checkout" element={<Checkout agregarAlCarrito={agregarAlCarrito} vaciarCarrito={vaciarCarrito} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Registro" element={<Registro />} />
         <Route path="/Admin" element={<Admin />} />

@@ -1,21 +1,20 @@
-import React from "react";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Carrito({carrito = [], quitarDelCarrito, VaciarCarrito}) {
+function Carrito({ carrito = [], quitarDelCarrito }) {
+  const navigate = useNavigate();
+  const totalPagar = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
 
-    const totalPagar = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+  const irACheckout = () => {
+    if (carrito.length > 0) {
+      navigate('/checkout');
+    } else {
+      alert("Agrega productos antes de ir a pagar.");
+    }
+  };
 
-    const manejarPago = () => {
-      if (carrito.length > 0) {
-        alert("¡Compra procesada con éxito! (Simulación)");
-        vaciarCarrito();
-      } else {
-        alert("Agrega productos antes de pagar.");
-      }
-    };
-
-    return(
-
-        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+  return (
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
       <div className="offcanvas-header bg-light">
         <h5 className="offcanvas-title fw-bold" id="offcanvasCarritoLabel">Mi carrito de compras</h5>
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -23,7 +22,6 @@ function Carrito({carrito = [], quitarDelCarrito, VaciarCarrito}) {
       
       <div className="offcanvas-body d-flex flex-column">
         <div id="items-carrito" className="flex-grow-1 overflow-auto mb-3">
-          {/* Renderizado condicional: ¿Está vacío o tiene productos? */}
           {carrito.length === 0 ? (
             <p className="text-muted text-center mt-4">Tu carrito está vacío.</p>
           ) : (
@@ -51,17 +49,18 @@ function Carrito({carrito = [], quitarDelCarrito, VaciarCarrito}) {
             <span>TOTAL:</span>
             <span>${totalPagar.toLocaleString('es-CL')}</span>
           </h4>
+          {/* data-bs-dismiss cierra el panel lateral automáticamente al ir al Checkout */}
           <button
             className="btn btn-success w-100 fw-bold mt-2 py-2"
-            onClick={manejarPago}
+            data-bs-dismiss="offcanvas"
+            onClick={irACheckout}
           >
-            PAGAR
+            COMPRAR AHORA
           </button>
         </div>
       </div>
     </div>
   );
-    
 }
 
 export default Carrito;

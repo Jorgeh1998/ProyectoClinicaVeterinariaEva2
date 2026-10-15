@@ -66,7 +66,7 @@ function Categorias({ agregarAlCarrito }) {
               {productosDeCategoria.map((producto) => (
                 <div key={producto.id} className="col-12 col-md-6 col-lg-3">
                   <div className="card h-100 border-0 shadow-sm service-card">
-                    <img 
+                    <img
                       src={producto.img}
                       className="card-img-top"
                       alt={producto.nombre}

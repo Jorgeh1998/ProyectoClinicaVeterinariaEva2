@@ -54,6 +54,12 @@ function Header({ contadorCarrito = 0 }) {
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/registro">Regístrate</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/categorias" onClick={irArriba}>Categorías</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/ofertas" onClick={irArriba}>Ofertas</Link>
+              </li>
             </ul>
             
             <div className="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0 align-items-lg-center">
