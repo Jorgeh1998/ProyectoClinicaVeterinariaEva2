@@ -9,6 +9,7 @@ import Carrito from "./components/Carrito";
 // Paginas
 import Home from "./pages/Home";
 import Tienda from "./pages/Tienda";
+import Login from "./pages/Login";
 
 function App() {
 
@@ -60,8 +61,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* Le pasamos la función agregarAlCarrito como PROP a la Tienda */}
         <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
 
       <Footer />

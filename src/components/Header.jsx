@@ -18,7 +18,7 @@ function Header({ contadorCarrito }) {
               <li className="nav-item"><Link className="nav-link text-white active" to="/">Inicio</Link></li>
               <li className="nav-item"><a className="nav-link text-white" href="#servicios">Servicios</a></li>
               <li className="nav-item"><Link className="nav-link text-white" to="/productos">Farmacia/Tienda</Link></li>
-              <li className="nav-item"><a className="nav-link text-white" href="#login">Iniciar Sesión</a></li>
+              <li className="nav-item"><Link className="nav-link text-white" to="/login">Iniciar Sesión</Link></li>
               <li className="nav-item"><a className="nav-link text-white" href="#registro">Regístrate</a></li>
             </ul>
             
