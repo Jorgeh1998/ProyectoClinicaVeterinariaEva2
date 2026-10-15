@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -16,7 +17,7 @@ function Footer() {
             <ul className="list-unstyled small d-flex flex-column gap-2">
               <li><a href="#productos" className="text-secondary text-decoration-none hover-link">Farmacia y Accesorios</a></li>
               <li><a href="#login" className="text-secondary text-decoration-none hover-link">Portal de Clientes (Login)</a></li>
-              <li><a href="#registro" className="text-secondary text-decoration-none hover-link">Crear una Cuenta</a></li>
+              <li><Link to="#registro" className="text-secondary text-decoration-none hover-link">Crear una Cuenta</Link></li>
               <li><a href="#agenda" className="text-secondary text-decoration-none hover-link">Solicitud de Horas</a></li>
             </ul>
           </div>

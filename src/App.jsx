@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Tienda from "./pages/Tienda";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import Registro from "./pages/Registro";
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Registro" element={<Registro />} />
         <Route path="/Admin" element={<Admin />} />
       </Routes>
 

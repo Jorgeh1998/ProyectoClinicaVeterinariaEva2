@@ -19,7 +19,7 @@ function Header({ contadorCarrito }) {
               <li className="nav-item"><a className="nav-link text-white" href="#servicios">Servicios</a></li>
               <li className="nav-item"><Link className="nav-link text-white" to="/productos">Farmacia/Tienda</Link></li>
               <li className="nav-item"><Link className="nav-link text-white" to="/login">Iniciar Sesión</Link></li>
-              <li className="nav-item"><a className="nav-link text-white" href="#registro">Regístrate</a></li>
+              <li className="nav-item"><Link className="nav-link text-white" to="#registro">Regístrate</Link></li>
             </ul>
             
             <div className="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0 align-items-lg-center">
