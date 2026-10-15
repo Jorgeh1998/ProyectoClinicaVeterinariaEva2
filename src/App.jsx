@@ -10,6 +10,7 @@ import Carrito from "./components/Carrito";
 import Home from "./pages/Home";
 import Tienda from "./pages/Tienda";
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 function App() {
 
@@ -62,7 +63,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Tienda agregarAlCarrito={agregarAlCarrito} />} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Admin" element={<Admin />} />
       </Routes>
 
       <Footer />
