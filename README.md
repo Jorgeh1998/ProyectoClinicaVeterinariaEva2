@@ -3,7 +3,7 @@
 ## Descripcion del Proyecto
 Este proyecto corresponde a la Evaluacion Parcial 2 de la asignatura Desarrollo Fullstack II (DSY1104) de Duoc UC. Consiste en la migracion y actualizacion del sitio web y tienda online de la clinica Veterinaria San Marcos desde una maqueta estatica en HTML, CSS y JavaScript puro hacia una aplicacion web moderna de una sola pagina (SPA) desarrollada con React y Vite.
 
-El sistema integra diseno responsivo mediante Bootstrap 5, navegacion fluida con React Router, manejo de estados y propiedades (props y state), persistencia de datos simulada mediante LocalStorage y SessionStorage, ademas de pruebas unitarias automatizadas con Jasmine y Karma.
+El sistema integra diseño responsivo mediante Bootstrap 5, navegacion fluida con React Router, manejo de estados y propiedades (props y state), persistencia de datos simulada mediante LocalStorage y SessionStorage, ademas de pruebas unitarias automatizadas con Jasmine y Karma.
 
 ---
 
